@@ -1,0 +1,24 @@
+# On ne veut pas copier l'historique Git dans l'image (c'est lourd)
+.git
+.gitignore
+
+# On ne veut pas copier les fichiers de config Docker dans le Docker lui-même
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# On ne veut pas copier tes scripts de test locaux
+test_client.py
+index.html
+
+# On ne veut pas copier tes images de test
+*.jpg
+*.png
+*.webp
+
+# On ne veut pas copier le cache Python de ton Mac
+__pycache__
+venv
+.vscode
+.DS_Store
+README.md

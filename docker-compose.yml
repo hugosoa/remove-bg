@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api-removebg:
+    # "Construis l'image à partir du Dockerfile qui est dans ce dossier (.)"
+    build: . 
+    
+    # "Ouvre le port 8000 pour que je puisse y accéder"
+    ports:
+      - "8000:8000"
+    
+    # Les Volumes (Super Important !)
+    volumes:
+      # 1. Synchronise ton dossier actuel avec le dossier /app du conteneur
+      # Comme ça, si tu modifies main.py sur ton PC, le conteneur le voit direct !
+      - ./:/app
+      
+      # 2. Persistance du modèle IA
+      # Ça évite de retélécharger les 170Mo de l'IA à chaque redémarrage
+      - u2net_data:/root/.u2net
+
+    # La commande de lancement (avec --reload pour le développement)
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+# On déclare le volume de stockage pour le modèle IA
+volumes:
+  u2net_data:
