@@ -1,7 +1,7 @@
 1. Structure des fichiers
 Créez un dossier racine pour votre projet et placez-y les fichiers suivants :
 
-Plaintext
+```text
 removebg-api/
 ├── .dockerignore
 ├── .gitignore
@@ -10,6 +10,7 @@ removebg-api/
 ├── main.py
 ├── requirements.txt
 └── README.md
+```
 2. Le code de l'API (main.py)
 Ce fichier contient la logique FastAPI, le traitement d'image et la gestion des erreurs.
 
